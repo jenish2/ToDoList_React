@@ -17,7 +17,7 @@ header {
 }
 
 form {
-  min-height: 15vh;
+  min-height: 18vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,6 +28,7 @@ form input {
   padding: 0.5rem;
   font: 2rem;
   background: white;
+  min-width: 20vw;
 }
 
 form button {
@@ -36,7 +37,7 @@ form button {
   background: white;
   cursor: pointer;
   transition: all 0.4s ease;
-  font-weight: bold;
+  min-width: 3rem;
 }
 
 form button:hover {
@@ -47,4 +48,58 @@ form button:hover {
 .todo-button {
   padding: 0.5rem;
   margin-right: 1.5rem;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo {
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+  margin-bottom: 0.5rem;
+}
+
+.todo-item {
+  display: flex;
+}
+.complete-btn {
+  min-width: 3rem;
+  border: none;
+  background: rgb(11, 212, 162);
+  color: white;
+  cursor: pointer;
+}
+.trash-btn {
+  min-width: 3rem;
+  margin-right: 0rem;
+  border: none;
+  background-color: #ff6f47;
+  cursor: pointer;
+}
+.task {
+  min-width: 10rem;
+}
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.task {
+  background-color: bisque;
 }
