@@ -1,8 +1,13 @@
 import React from "react";
 
-const Form = ({ setInputText, setTodos, todos, inputText }) => {
+const Form = ({
+  setInputText,
+  setTodos,
+  todos,
+  inputText,
+  setStatusForFilter,
+}) => {
   const inputTextHandler = (e) => {
-    console.log(e.target.value);
     setInputText(e.target.value);
   };
 
@@ -16,6 +21,10 @@ const Form = ({ setInputText, setTodos, todos, inputText }) => {
     setInputText("");
   };
 
+  const statusForFilterHandler = (e) => {
+    setStatusForFilter(e.target.value);
+  };
+
   return (
     <form>
       <input
@@ -25,10 +34,14 @@ const Form = ({ setInputText, setTodos, todos, inputText }) => {
         className="todo-input"
       />
       <button className="todo-button" type="submit" onClick={submitTodoHandler}>
-        AddTask
+        <i className="fa fa-plus"></i>
       </button>
       <div className="select">
-        <select name="todo" className="filter-todo">
+        <select
+          name="todo"
+          className="filter-todo"
+          onClick={statusForFilterHandler}
+        >
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>
